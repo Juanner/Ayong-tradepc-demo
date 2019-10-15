@@ -1,10 +1,8 @@
 import Tools from 'utils/index';
 import React from 'react';
-import Link from 'react-router';
-import { Navigation, Icon, Menu } from 'qnui';
+import { Navigation, Icon } from 'qnui';
 
-const { Item, Group } = Navigation;
-
+const { Item } = Navigation;
 /**
     @author Mothpro
     导航条
@@ -14,21 +12,14 @@ class Header extends React.Component {
         const linkConfig = {
             // 本地localhost或127.0.0.1环境下的路径设置
             local: {
-
-                redux: '/dist/redux.html',
-                routerDemo: '/dist/router.html#/demo',
-                routerDemo1: '/dist/router.html#/demo1',
-                routerDemo2: '/dist/router.html#/demo2',
-
-                h5: '/dist/h5/ebsindex.html',
+                reduxCalculator: '/dist/redux.html#/calculator',
+                reduxLog: '/dist/redux.html#/log',
+                reduxIncome: '/dist/redux.html#/income',
             },
             onLine: {// 自行根据服务端路径定义
-                redux: '/dist/redux.html',
-                routerDemo: '/dist/router.html#/demo',
-                routerDemo1: '/dist/router.html#/demo1',
-                routerDemo2: '/dist/router.html#/demo2',
-
-                h5: '/dist/h5/ebsindex.html',
+                reduxCalculator: '/dist/redux.html#/calculator',
+                reduxLog: '/dist/redux.html#/log',
+                reduxIncome: '/dist/redux.html#/income',
             },
         };
 
@@ -45,32 +36,21 @@ class Header extends React.Component {
                 </li>
                 <Item
                     itemid="1"
-                    text="Router"
-                    icon="service"
-                >
-                    <Menu>
-                        <Menu.Item key="1" link={links.routerDemo}>
-                            <a href={links.routerDemo}>About</a>
-                        </Menu.Item>
-                        <Menu.Item key="2" link={links.routerDemo1}>
-                            <a href={links.routerDemo1}>About1</a>
-                        </Menu.Item>
-                        <Menu.Item key="3" link={links.routerDemo2}>
-                            <a href={links.routerDemo2}>About2</a>
-                        </Menu.Item>
-                    </Menu>
-                </Item>
+                    text="计算器"
+                    icon="calendar"
+                    link={links.reduxCalculator}
+                    />                         
                 <Item
                     itemid="2"
-                    text="Redux"
-                    icon="training"
-                    link={links.redux}
-                />
+                    text="日志"
+                    icon="form"
+                    link={links.reduxLog}
+                    />               
                 <Item
                     itemid="3"
-                    text="H5"
+                    text="收入分析"
                     icon="training"
-                    link={links.h5}
+                    link={links.reduxIncome}
                 />
                 <li className="navigation-toolbar">
                     <ul>

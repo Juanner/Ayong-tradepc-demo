@@ -1,0 +1,98 @@
+//列表数据页
+*{
+    font-size: 12px;
+  }  
+  
+  #operate {
+      margin: 10px;
+      margin-left: 26px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .mySelect {
+      width: 90px;
+      height: 26px;
+      background-color: #fff;
+      float: left;
+      margin-right: 15px;
+      border: solid 1px #eee;
+      cursor: pointer;
+    }
+    
+    .selectDate {
+      cursor: pointer;
+    }
+    
+    #query, #syn {
+      width: 60px;
+      height: 24px;   
+      padding-top:2px;
+      border:1px solid #eee;
+      border-radius: 3px;
+    }
+    
+    #query {
+      background-color: #519fe7;
+      color: #fff;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    
+    #syn {
+      color: #000;
+      margin: 0 5px;
+      background-color: #f5f5f7;
+    }
+    
+    #data {
+      width: 98%;
+      border: 1px solid #eee;
+      overflow: hidden;
+    }
+    
+    table {
+      width: 100%;
+      border-radius: 2px;
+      border-spacing: 0;
+      border-collapse: 0;
+      text-align: left;
+    }
+    
+    thead {
+      background-color: #f5f5f7;
+    }
+    
+    th, td {
+      height: 26px;
+      line-height: 26px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    thead th:first-child, tbody td:first-child {
+      padding-left: 25px;
+    }
+    
+    tbody td:first-child, tbody td:last-child {
+      color: #519fe7;
+    }
+    
+    #page {
+      float: right;
+      margin-right: 200px;
+      color: #519fe7;
+      height: 30px;
+      line-height: 30px;
+    }
+    
+    #prepage, #nextpage {
+      display: inline;
+      cursor: pointer;
+    }
+    
+    #pagenum {
+      display: inline;
+      color: #000;
+    }
+    

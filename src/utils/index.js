@@ -4,6 +4,11 @@ import apimap from './apimap';
 /* apienv的可选值 local,development,production */
 const apienv = window.apienv || 'local';
 const Tools = {
+    /**
+     * @param {*} param
+     * @param {*} suc
+     * @param {*} err
+     */
     ajax(param, suc, err) {
     /* 在demo html中修改window.apienv实现不同环境的数据接口切换 */
         param.url = apimap[apienv][param.api];
@@ -25,24 +30,37 @@ const Tools = {
             throw new Error(`接口${param.api}调用失败！服务端异常！${error.message}`);
         });
     },
-
+    /**
+     *
+     */
     isLocal() {
         const { host } = window.location;
         return host.indexOf('127.0.0.1') > -1 || host.indexOf('localhost') > -1;
     },
+    /**
+     *
+     */
     getUrlParam(name) {
         const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`);
         const r = decodeURIComponent(window.location.search.substr(1)).match(reg);
         if (r != null) return unescape(r[2]);
         return null;
     },
-
+    /**
+     *
+     */
     isArray(object) {
         return object instanceof Array;
     },
+    /**
+     *
+     */
     isWindow(obj) {
         return obj != null && obj == obj.window;
     },
+    /**
+     *
+     */
     isDocument(obj) {
         return obj != null && obj.nodeType == obj.DOCUMENT_NODE;
     },

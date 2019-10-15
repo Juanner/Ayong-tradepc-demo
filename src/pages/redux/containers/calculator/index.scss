@@ -1,0 +1,129 @@
+#calculator{
+    width: 340px;
+    background-color: #000;
+    margin:0 auto;
+    margin-top:20px;
+    border-radius:5px;
+    position: relative;
+  }
+  #head{
+    overflow: hidden;
+  }
+  .circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: left;
+    margin: 5px;
+  }
+  #delete{
+    background-color: #f00
+  }
+  #hide{
+    background-color: #ff0
+  }
+  #extend{
+    background-color: #0f0
+  }
+  #result{
+    clear: both;
+    height: 80px;
+    line-height: 80px;
+    text-align: right;
+    font-size: 62px;
+    color: #fff;
+    padding-right: 20px;
+  }
+  #mainCell{
+    width: 100%;
+    height: 60px;
+  }
+  @mixin cell{
+    width: 25%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    display:inline-block;
+    font-size: 24px;
+    color: #fff;
+    border-left:solid 1px #000;
+    border-top:solid 1px #000;
+    cursor: pointer;
+  }
+  .cell4,.cell5,.cell6,.cell8,.cell9,.cell10,.cell12,.cell13,.cell14,.cell16,.cell17{
+    @include cell;
+    background-color: #6A6B68;
+  }
+  .cell0,.cell1,.cell2{
+    @include cell;
+    background-color: #4d4e4b;
+  }
+  .cell3,.cell7,.cell11,.cell15,.cell18{
+    @include cell;
+    background-color: #ff9D2A;
+  }
+ .cell16{
+   width:50%;
+   border-bottom-left-radius: 5%;
+ }
+ .cell18{
+   border-bottom-right-radius: 5%;
+ }  
+ .cell0,.cell4,.cell8,.cell12,.cell16{
+   border-left: none;
+ }
+  // 加载动画
+  #loading{
+    position: absolute;
+    top:40px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    display: none;
+  }
+  .container1 > div, .container2 > div {
+    width: 12px;
+    height: 12px;
+    background-color: #eee;
+    border-radius: 100%;
+    position: absolute;
+    animation: bouncedelay 1.5s infinite ease-in-out;
+    animation-fill-mode: both;
+  }
+  .loading-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .container2 {
+    transform: rotateZ(45deg);
+  }
+  .circle1 { top: 0; left: 0; }
+  .circle2 { top: 0; right: 0; }
+  .circle3 { right: 0; bottom: 0; }
+  .circle4 { left: 0; bottom: 0; }
+  .container2 .circle1 {
+    animation-delay: -0.6s;
+  }
+  .container1 .circle2 {
+    animation-delay: -0.5s;
+  }
+  .container2 .circle2 {
+    animation-delay: -0.4s;
+  }
+  .container1 .circle3 {
+    animation-delay: -0.3s;
+  }
+  .container2 .circle3 {
+    animation-delay: -0.2s;
+  }
+  .container1 .circle4 {
+    animation-delay: -0.1s;
+  }
+  @keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+    } 40% {
+          transform: scale(1.0);
+      }
+  }

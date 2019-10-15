@@ -1,0 +1,15 @@
+#table{
+    margin: 10px auto;
+    width:600px;
+    border-spacing: 0;
+    text-align: center;
+    td{
+        height: 40px;
+        font-size: 16px;
+        border-bottom: 1px solid #eee;
+    }
+}
+#thead{
+    background-color: #eee;
+}
+
