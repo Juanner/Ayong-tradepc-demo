@@ -16,9 +16,7 @@ export const clickAC = () => ({ type: CLICK_AC });
 /**
  * @param {小数点} value
  */
-export const clickDot = (value) => {
-    return { type: CLICK_DOT, value };
-};
+export const clickDot = value => ({ type: CLICK_DOT, value });
 /**
  * 点击+/-
  */
@@ -27,16 +25,12 @@ export const clickChange = () => ({ type: CLICK_CHANGE });
  * 点击计算器的键
  * @param {} value
  */
-export const clickKey = (value) => {
-    return { type: CLICK_KEY, value };
-};
+export const clickKey = value => ({ type: CLICK_KEY, value });
 /**
  * 显示动画
  * @param {*} value
  */
-export const showAnimate = (value) => {
-    return { type: SHOW_ANIMATE, value };
-};
+export const showAnimate = value => ({ type: SHOW_ANIMATE, value });
 /**
  * 隐藏动画
  */
@@ -46,14 +40,14 @@ export const hideAnimate = () => ({ type: HIDE_ANIMATE });
  * @param {计算的表达式} express
  * @param {计算结果} res
  */
-export const addLog = (express, res) => {
-    return (dispatch) => {
-        fetch('http://127.0.0.1/log.php', {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-            body: new URLSearchParams({ expression: express, result: res }).toString()
-        }).then(() => {
-            dispatch(showAnimate(res));
-        }).catch(error => {console.log(error);} )
-    }
-}
+export const addLog = (express, res) => (dispatch) => {
+    fetch('http://127.0.0.1/log.php', {
+        method: 'POST',
+        headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+        body: new URLSearchParams({ expression: express, result: res }).toString(),
+    }).then(() => {
+        dispatch(showAnimate(res));
+    }).catch((error) => {
+        console.log(error);
+    });
+};

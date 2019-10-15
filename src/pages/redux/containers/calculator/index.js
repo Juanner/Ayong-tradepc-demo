@@ -25,13 +25,14 @@ class Calculator extends Component {
             clickChange();
             break;
         case '=':
+        {
             let res = result;
             res = res.replace(/×/g, '*');
             res = res.replace(/÷/g, '/');
             const express = res;
             try {
                 res = String(evaluate(res));
-            } catch (e) {
+            } catch (event) {
                 res = 'Wrong';
             }
             // 增加日志方法，传入需计算的表达式以及计算结果
@@ -41,6 +42,7 @@ class Calculator extends Component {
                 hideAnimate();
             }, 1500);
             break;
+        }
         default:
             clickKey(key);
         }

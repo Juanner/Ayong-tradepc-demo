@@ -13,7 +13,7 @@ export default function index(state = initialState, action = defaultAction) {
         return {
             ...state,
             totalLogData: action.value,
-        };  
+        };
     default:
         return state;
     }
