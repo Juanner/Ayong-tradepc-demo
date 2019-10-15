@@ -65,7 +65,7 @@ class Calculator extends Component {
                 <div onClick={this.calculate} id="mainCell">
                     {
                         keys.map((item, index) => (
-                            <div className={`cell${index}`} key={index}>
+                            <div className={`cell${index}`} key={item.id}>
                                 {item}
                             </div>
                         ))

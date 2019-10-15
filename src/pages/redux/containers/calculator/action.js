@@ -47,7 +47,5 @@ export const addLog = (express, res) => (dispatch) => {
         body: new URLSearchParams({ expression: express, result: res }).toString(),
     }).then(() => {
         dispatch(showAnimate(res));
-    }).catch((error) => {
-        console.log(error);
     });
 };

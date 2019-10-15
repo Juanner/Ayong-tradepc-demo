@@ -30,8 +30,8 @@ class Log extends Component {
                 </thead>
                 <tbody>
                     {
-                        totalLogData.map((item, index) => (
-                            <tr key={index}>
+                        totalLogData.map(item => (
+                            <tr key={item.id}>
                                 <td>{item.expression}</td>
                                 <td>{item.result}</td>
                             </tr>
